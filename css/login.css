@@ -1,0 +1,29 @@
+body {
+
+ background: url(img/tlo.png); /*from http://subtlepatterns.com*/
+
+}
+main
+{
+	padding-top: 35px;
+	height: 70px;
+	margin: auto;
+	text-align: justify;
+}
+.input
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.bad
+{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+  text-align: center;
+  height: 20px;
+  width: 250px;
+  border-radius: 15px;
+  padding-top: 5px;
+}
