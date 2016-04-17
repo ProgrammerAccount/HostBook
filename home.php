@@ -26,8 +26,12 @@ if(!isset($_SESSION['zalogowany']))
      <a href="img.php"><div class="menu">Filmy</div></a>
      <a href="img.php"><div class="menu">Muzyka</div></a>
   </div>
-  Witaj w miejscu gdzie możesz zebrać ulubioną muzyka zdjecia i filmy.
-<i class="demo-icon icon-note"></i>
+<h2 style="text-align:center;">Witaj, To miejsce gdzie możesz zgromadzić<p> Muzyke Zdjecia  Filmy</p></h2>
+<div style="margin: auto; text-align:center; ">
+<div class="zakladki"><i style="font-size:48px;" class="demo-icon icon-note"> </i></div>
+<div class="zakladki"><i style="font-size:48px;" class="demo-icon icon-video"></i></div>
+<div class="zakladki"><i style="font-size:48px;" class="demo-icon icon-picture"></i></div>
+</div>
   </main>
 </body>
 </html>
