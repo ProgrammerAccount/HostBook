@@ -1,0 +1,4 @@
+
+.icon-picture:before { content: '\e800'; } /* '' */
+.icon-video:before { content: '\e801'; } /* '' */
+.icon-note:before { content: '\e802'; } /* '' */
