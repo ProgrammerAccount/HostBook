@@ -8,7 +8,7 @@ if(!isset($_SESSION['zalogowany']))
 if(isset($_FILES['file']))
 {
 
-     $dir="Upload/".$_SESSION['id']."/";
+     $dir="Upload/".$_SESSION['id']."/"."img/";
      $name_tmp=$_FILES['file']['tmp_name'];
      $name=$_FILES['file']['name'];
      //sprawdzam rozszeżenia
@@ -27,7 +27,8 @@ if(isset($_FILES['file']))
           $name=$name.rand(1,9);
         }
       $name=$name.".".$path;
-      move_uploaded_file($name_tmp,$dir.$name."/img");
+      move_uploaded_file($name_tmp,$dir.$name);
+
         //wysyłam
       require("connect.php");
       $connect= new mysqli($host,$user,$pass,$base);

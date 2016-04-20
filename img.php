@@ -56,7 +56,7 @@ if(!isset($_SESSION['zalogowany']))
             {
               $tab=$return->fetch_assoc();
               echo '<form action="manager.php" method="POST">';
-              $source="Upload/".$id."/".$tab['file_name'];
+              $source="Upload/".$id."/img"."/".$tab['file_name'];
               echo '<div class="img"><input img class="img_size" type="image" src="'.$source.'" alt="Submit Form" /></div>';
               echo "</form>";
             }
