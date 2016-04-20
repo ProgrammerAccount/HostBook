@@ -51,8 +51,21 @@ if ($password!=$passwordv2)
 if($good==true)
 {
   $connect->query("INSERT INTO user VALUES(NULL,'".$save_email."','".password_hash($password,PASSWORD_DEFAULT)."','".$name."') ");
-  $connect->close();
+
   $_SESSION['zalogowany']=true;
+    $_SESSION['name']=$name;
+  unset($anwers);
+  $anwers=$connect->query("SELECT * FROM user WHERE email='".$save_email."'");
+  $tab=$anwers->fetch_assoc();
+  mkdir("Upload/".$tab['id'],0777);
+  chmod("Upload/".$tab['id'],0777);
+  mkdir("Upload/".$tab['id']."/img",0777);
+  mkdir("Upload/".$tab['id']."/muzyka",0777);
+  mkdir("Upload/".$tab['id']."/filmy",0777);
+
+  fopen("Upload/".$tab['id']."/index.php","w+");
+  $_SESSION['id']=$tab['id'];
+    $connect->close();
   header("Location: home.php");
 }
 else {

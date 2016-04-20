@@ -5,6 +5,8 @@ if(!isset($_SESSION['zalogowany']))
   header("Location: index.php");
     exit;
 }
+
+
 ?>
 <html>
 <head>
@@ -30,20 +32,38 @@ if(!isset($_SESSION['zalogowany']))
      <a href="img.php"><div class="menu">Filmy</div></a>
      <a href="wyloguj.php"><div class="menu">Wyloguj się</div></a>
   </div>
-    <main>
-<h2 style="text-align:center;">Witaj, To miejsce gdzie możesz zgromadzić<p>    </p></h2>
-<div style="margin: auto; text-align:center; ">
+  <main>
+    <a href="Upload.php"><h4 style="text-align:center">Dodaj zdjecie</h4></a>
+<br/>
 
-<div class="podpis">
-Muzyke
-<a href="muzyka.php"><div class="zakladki"><i style="font-size:48px;" class="demo-icon icon-note"> </i></div></a></div>
-<div class="podpis">
-Zdjecia
-<a href="img.php"><div class="zakladki"><i style="font-size:48px;" class="demo-icon icon-video"></i></div></a></div>
-<div class="podpis">
-Filmy
-<a href="filmy.php"><div style="margin-right:0;" class="zakladki"><i style="font-size:48px;" class="demo-icon icon-picture"></i></div></a></div>
-</div>
+    <?php
+    $id=$_SESSION['id'];
+    require_once('connect.php');
+    $connect=new mysqli($host,$user,$pass,$base);
+    if($connect->connect_error)
+    {
+      echo "Error ".$connect->connect_errno;
+    }
+    else
+      {
+        $id=$_SESSION['id'];
+        $return=$connect->query("SELECT * FROM img WHERE id_user='".$id."'");
+        $ile=$return->num_rows;
+        if($ile>0)
+        {
+
+            while ($ile--)
+            {
+              $tab=$return->fetch_assoc();
+              echo '<form action="manager.php" method="POST">';
+              $source="Upload/".$id."/".$tab['file_name'];
+              echo '<div class="img"><input img class="img_size" type="image" src="'.$source.'" alt="Submit Form" /></div>';
+              echo "</form>";
+            }
+
+        }
+      }
+      ?>
   </main>
 </body>
 </html>

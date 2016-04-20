@@ -24,7 +24,8 @@ if($return->num_rows>0)
   $array=$return->fetch_assoc();
   if(password_verify($password,$array['pass']))
     {
-          $_SESSION['name']=$array['name'];
+        $_SESSION['id']=$array['id'];
+        $_SESSION['name']=$array['name'];
         $_SESSION['zalogowany']=true;
         header("Location: home.php");
 
