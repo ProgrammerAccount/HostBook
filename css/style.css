@@ -101,6 +101,7 @@ a:hover .zakladki{
  }
  .img
  {
+   background-image: url(img/img_background.png);
    height: 500px;
    width: 700px;
    margin-left: auto;
@@ -108,9 +109,17 @@ a:hover .zakladki{
    border:10px dashed  #8c8c8c;
    text-align: center;
  }
+ .img:hover{
+
+
+ }
  .img_size
  {
    height: 500px;
    width: 700px;
 
+ }
+ .img_size:hover
+ {
+   opacity: 0.4;
  }

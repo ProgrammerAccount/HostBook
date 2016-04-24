@@ -40,6 +40,7 @@ if(isset($_FILES['file']))
       {
         $connect->query("INSERT INTO img VALUES(NULL,'".$_SESSION['id']."','".$name."')" );
         $connect->close();
+          header("Location: img.php");
       }
       }
 
@@ -66,12 +67,14 @@ if(isset($_FILES['file']))
 
    </div>
    <div id="menu">
-     <a href="img.php"><div class="menu" style="border-left: 2px dotted blue;">Muzyka</div></a>
+     <a href="home.php"><div class="menu" style="border-left: 2px dotted blue;">Home</div></a>
+     <a href="muzyka.php"><div class="menu">Muzyka</div></a>
      <a href="img.php"><div class="menu">zdjecia</div></a>
      <a href="img.php"><div class="menu">Filmy</div></a>
      <a href="wyloguj.php"><div class="menu">Wyloguj się</div></a>
   </div>
   <main>
+    <div style="text-align:center; margin:auto; padding-top:300px;">
 <form  method="post" enctype="multipart/form-data"  >
   <input type="file" value="Poszukaj pliku" name="file" accept="image/*">
     <input type="submit" value="Wyslij Plik">

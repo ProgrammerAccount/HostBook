@@ -21,7 +21,7 @@ if(isset($_SESSION['zalogowany']))
 	<!--Logowanie-->
 	<div class="input"><input type="email" 	  name="login" 	placeholder="E-mail"/></div> <br/>
 	<div class="input"><input type="password" name="pass" 	placeholder="Hasło"/></div></br>
-	<div class="g-recaptcha" data-sitekey="6LcT2B0TAAAAAMZGMEWRRSSldJFFNSWvVAzXNYwy"></div></br>
+	<div style=" margin:auto; max-width:234px"><div class="g-recaptcha" data-sitekey="6LcT2B0TAAAAAMZGMEWRRSSldJFFNSWvVAzXNYwy"></div></br></div>
 	<div class="input"><input type="submit"   value="Zaloguj się"/></div>
 	<?php
 	if (isset($_SESSION['b_email']))

@@ -27,13 +27,19 @@ if(!isset($_SESSION['zalogowany']))
 
    </div>
    <div id="menu">
-     <a href="img.php"><div class="menu" style="border-left: 2px dotted blue;">Muzyka</div></a>
+     <a href="home.php"><div class="menu" style="border-left: 2px dotted blue;">Home</div></a>
+     <a href="muzyka.php"><div class="menu">Muzyka</div></a>
      <a href="img.php"><div class="menu">zdjecia</div></a>
      <a href="img.php"><div class="menu">Filmy</div></a>
      <a href="wyloguj.php"><div class="menu">Wyloguj się</div></a>
   </div>
   <main>
     <a href="Upload.php"><h4 style="text-align:center">Dodaj zdjecie</h4></a>
+    <script>
+function myFunction() {
+confirm("Press a button!");
+}
+</script>
 <br/>
 
     <?php
@@ -55,9 +61,12 @@ if(!isset($_SESSION['zalogowany']))
             while ($ile--)
             {
               $tab=$return->fetch_assoc();
-              echo '<form action="manager.php" method="POST">';
+              echo '<form method="POST" action="manager.php">';
+              echo '<input type="hidden" name="id_img" value="'.$tab['id'].'">';
+              echo '<input type="hidden" name="name_file" value="'.$tab['file_name'].'">';
               $source="Upload/".$id."/img"."/".$tab['file_name'];
-              echo '<div class="img"><input img class="img_size" type="image" src="'.$source.'" alt="Submit Form" /></div>';
+
+              echo '<div class="img"><input img class="img_size" type="image" src="'.$source.'"  alt="Submit Form" /></div>';
               echo "</form>";
             }
 
